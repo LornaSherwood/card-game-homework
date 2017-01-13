@@ -3,7 +3,7 @@ import behaviours.*;
 import java.util.*;
 
 
-public class Deck {
+public class Deck implements Dealable{
   String name;
   int totalNumber;
   ArrayList<Populatable> pack; // array of populatable cards called pack

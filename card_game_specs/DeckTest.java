@@ -10,7 +10,7 @@ public class DeckTest {
   @Before
   public void before(){
     deck = new Deck("Standard", 52);
-    card = new Card(3, "hearts");
+    card = new Card("Standard", 3, "Hearts");
   }
 
   @Test 

@@ -1,5 +1,6 @@
 package behaviours;
 
-public interface Populatable{
+public interface Populatable {
+
   
 }

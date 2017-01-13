@@ -2,7 +2,7 @@ package card_game;
 import behaviours.*;
 import java.util.*;
 
-public class Player {
+public class Player implements DealtToAble{
 
   String name;
   ArrayList<DealtToAble> hand;
@@ -14,6 +14,10 @@ public class Player {
 
   public String getName(){
     return this.name;
+  }
+
+  public int countHand(){
+    return hand.size();
   }
 
 }

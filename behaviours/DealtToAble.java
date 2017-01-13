@@ -1,6 +1,6 @@
 package behaviours;
 
-public class DealtToAble {
+public interface DealtToAble {
 
   
 }
