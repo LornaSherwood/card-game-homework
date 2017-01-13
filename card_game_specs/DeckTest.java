@@ -9,8 +9,13 @@ public class DeckTest {
 
   @Before
   public void before(){
-    deck = new Deck(52);
+    deck = new Deck("Standard", 52);
     card = new Card(3, "hearts");
+  }
+
+  @Test 
+  public void canGetName(){
+    assertEquals("Standard", deck.getName());
   }
 
   @Test

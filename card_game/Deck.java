@@ -3,13 +3,19 @@ import behaviours.*;
 import java.util.*;
 
 
-public class Deck  {
+public class Deck {
+  String name;
   int totalNumber;
   ArrayList<Populatable> pack; // array of populatable cards called pack
 
-  public Deck(int totalNumber) {
+  public Deck(String name, int totalNumber) {
+    this.name = name;
     this.totalNumber = totalNumber;
     this.pack = new ArrayList<Populatable>();
+  }
+
+  public String getName(){
+    return this.name;
   }
 
   public int getTotalNumber(){
