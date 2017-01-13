@@ -16,4 +16,18 @@ public class Deck  {
     return this.totalNumber;
   }
 
+  public int packCount(){
+    return pack.size();
+  }
+
+  public void getCard(Populatable card){
+    pack.add(card);
+  }
+
+  public Populatable showCard(int index){
+    return pack.get(index);
+  }
+
+  
+
 }
