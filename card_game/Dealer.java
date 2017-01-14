@@ -10,7 +10,7 @@ public class Dealer {
   public Dealer(){
     this.name = name;
     this.players = new ArrayList<DealtToAble>();
-    this.deck = deck;
+    this.deck = deck; 
   }
 
   public void setDeck(Dealable deck){
@@ -25,19 +25,23 @@ public class Dealer {
     players.add(player);
   }
 
+  public DealtToAble showPlayer(int index){ 
+    return players.get(index);
+  }
+
   public int countPlayers(){
     return players.size();
   }
 
-  public Populatable getCard(){
+  public Populatable getCard(){ // turn Dealable deck back into Deck deck
     Deck returnedDeck = (Deck) deck;
-    return returnedDeck.showCard(0);
-    
+    return returnedDeck.removeCard(0); // remove the card at index 0
   }
-
-  /*public void dealCard(){
-    DealtToAble.hand.add(Dealable.pack.remove(0)); // take card from deck, put card in player hand 
-  }*/
+  
+  public void dealCard(DealtToAble player){ // say which card (set as 'top') and to which player.
+    Populatable topCard = deck.removeCard(0);
+    player.addCardToHand(topCard);
+  }
 
 
 }

@@ -34,6 +34,10 @@ public class Deck implements Dealable{
     return pack.get(index);
   }
 
+  public Populatable removeCard(int index){ // not tested
+    return pack.remove(index);
+  }
+
   
 
 }

@@ -2,14 +2,15 @@ package card_game;
 import behaviours.*;
 import java.util.*;
 
-public class Player implements DealtToAble{
+public class Player implements DealtToAble, Populatable{
 
   String name;
-  ArrayList<DealtToAble> hand;
+  ArrayList<Populatable> hand;
+  Populatable card;
 
   public Player(String name) {
     this.name = name;
-    this.hand = new ArrayList<DealtToAble>();
+    this.hand = new ArrayList<Populatable>();
   }
 
   public String getName(){
@@ -18,6 +19,10 @@ public class Player implements DealtToAble{
 
   public int countHand(){
     return hand.size();
+  }
+
+  public void addCardToHand(Populatable card){
+    hand.add(card);
   }
 
 }

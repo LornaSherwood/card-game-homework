@@ -34,8 +34,8 @@ public class DealerTest {
 
   @Test
   public void hasDeck(){
+    dealer.setDeck(deck);
     assertEquals(deck, dealer.hasDeck());
-
   }
 
   @Test
@@ -45,22 +45,32 @@ public class DealerTest {
   }
 
   @Test
+  public void canShowPlayer(){
+    dealer.getPlayer(player);
+    assertEquals(player, dealer.showPlayer(0));
+  }
+
+  @Test
   public void canGetCard(){
-    assertEquals(card, dealer.getCard());
+    deck.getCard(card);
+    dealer.setDeck(deck);
+    assertEquals(card, dealer.getCard()); //return a card
+    assertEquals(0, deck.packCount()); //deck is empty
+  }
+
+  @Test
+  public void canDealCard(){
+    deck.getCard(card); // make sure deck has one card
+    dealer.setDeck(deck); // dealer sets deck
+    dealer.getPlayer(player); //put one player into players array
+    dealer.dealCard(player);
+    assertEquals(1, player.countHand());//player has one more card
+    assertEquals(0, deck.packCount()); //deck has one less card
   }
 
 
-/*
-@Test
-  public void canDealCard(){
 
-    deck.getCard(card);
-    dealer.setDeck(deck);
-    dealer.getPlayer(player);
-    dealer.dealCard(card);
-    assertEquals(0, deck.packCount());
-    assertEquals(1, player.countHand());
-  }*/
+
 
 
 }
