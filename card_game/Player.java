@@ -6,7 +6,7 @@ public class Player implements DealtToAble, Populatable{
 
   String name;
   ArrayList<Populatable> hand;
-  Populatable card;
+  //Populatable card;
 
   public Player(String name) {
     this.name = name;

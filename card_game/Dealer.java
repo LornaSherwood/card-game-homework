@@ -3,12 +3,10 @@ import behaviours.*;
 import java.util.*;
 
 public class Dealer {
-  private String name;
   ArrayList<DealtToAble> players; // array of dealt to able players called players
   Dealable deck;
 
   public Dealer(){
-    this.name = name;
     this.players = new ArrayList<DealtToAble>();
     this.deck = deck; 
   }
