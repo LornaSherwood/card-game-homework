@@ -6,7 +6,7 @@ public class PlayerTest {
 
   Player player;
   Card card;
-  
+    
 
   @Before
   public void before(){
@@ -22,6 +22,18 @@ public class PlayerTest {
   @Test
   public void handStartsEmpty(){
     assertEquals(0, player.countHand());
+  }
+
+  @Test 
+  public void canAddCardToHand(){
+    player.addCardToHand(card);
+    assertEquals(1, player.countHand());
+  }
+
+  @Test 
+  public void canGetValueOfHand(){
+    player.addCardToHand(card);
+    assertEquals(5, player.getValueOfHand());
   }
 
 }

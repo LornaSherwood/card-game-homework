@@ -26,4 +26,6 @@ public class Rules implements Rulable{
   public int getStartHand(){
     return this.startHand;
   }
+
+  
 }

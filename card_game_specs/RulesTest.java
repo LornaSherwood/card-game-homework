@@ -30,6 +30,12 @@ public class RulesTest {
     assertEquals(1, rules.getStartHand());
   }
 
+  /*@Test
+  public void canShowWinner(){
+
+
+  }*/
+
 
 
 

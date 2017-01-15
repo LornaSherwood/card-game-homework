@@ -34,6 +34,10 @@ public class Game {
     dealer.dealStartHand(handSize);
   }
 
+  /*public ArrayList getValueOfCards(){
+    array = valueofcards for each player in players
+  }*/
+
 
 
 

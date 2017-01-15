@@ -59,8 +59,8 @@ public class GameTest {
     assertEquals(1, player.countHand());
   }
 
- @Test
- public void canTellDealerDealStartHand(){
+  @Test
+  public void canTellDealerDealStartHand(){
     game.setRules(rules);
     game.setDealer(rules);
     dealer.getPlayer(player);
@@ -68,6 +68,9 @@ public class GameTest {
     deck.getCard(card);
     game.dealerDealStartHand();
     assertEquals(1, player.countHand());
- }
+  }
+
+  
+
 
 }
