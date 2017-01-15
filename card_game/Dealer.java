@@ -2,8 +2,8 @@ package card_game;
 import behaviours.*;
 import java.util.*;
 
-public class Dealer {
-  ArrayList<DealtToAble> players; // array of dealt to able players called players
+public class Dealer implements CanDeal{
+  ArrayList<DealtToAble> players; // array of dealt to able objects called players
   Dealable deck;
 
   public Dealer(){
@@ -40,6 +40,16 @@ public class Dealer {
     Populatable topCard = deck.removeCard(0);
     player.addCardToHand(topCard);
   }
+
+ public void dealStartHand(int number){
+   for(int i = 0; i < number; i++){
+     for (DealtToAble player : players){
+       dealCard(player);
+     }
+   }
+ }
+
+ 
 
 
 }

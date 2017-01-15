@@ -68,6 +68,15 @@ public class DealerTest {
     assertEquals(0, deck.packCount()); //deck has one less card
   }
 
+  @Test
+  public void canDealStartHand(){
+    deck.getCard(card); // make sure deck has one card
+    dealer.setDeck(deck); // dealer sets deck
+    dealer.getPlayer(player);//put one player into players array
+    dealer.dealStartHand(1);
+    assertEquals(1, player.countHand());
+  }
+
 
 
 
