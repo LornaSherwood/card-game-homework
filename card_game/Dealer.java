@@ -19,12 +19,16 @@ public class Dealer implements CanDeal{
     return this.deck;
   }
 
-  public void getPlayer(DealtToAble player){
+  public void addPlayer(DealtToAble player){
     players.add(player);
   }
 
   public DealtToAble showPlayer(int index){ 
     return players.get(index);
+  }
+
+  public ArrayList<DealtToAble> getPlayers(){
+    return this.players;
   }
 
   public int countPlayers(){
@@ -41,13 +45,15 @@ public class Dealer implements CanDeal{
     player.addCardToHand(topCard);
   }
 
- public void dealStartHand(int number){
-   for(int i = 0; i < number; i++){
-     for (DealtToAble player : players){
-       dealCard(player);
-     }
-   }
- }
+  public void dealStartHand(int number){
+    for(int i = 0; i < number; i++){
+      for (DealtToAble player : players){
+        dealCard(player);
+      }
+    }
+  }
+
+ 
 
  
 

@@ -6,6 +6,7 @@ public class DealerTest {
 
   Dealer dealer;
   Player player;
+  Player player2;
   Deck deck;
   Deck deck1;
   Card card;
@@ -15,6 +16,7 @@ public class DealerTest {
   public void before(){
     dealer = new Dealer();
     player = new Player("Rory");
+    player2 = new Player("Jez");
     deck = new Deck("Standard", 52);
     deck1 = new Deck("Uno", 45);
     card = new Card("Standard", 3, "Hearts");
@@ -39,14 +41,20 @@ public class DealerTest {
   }
 
   @Test
-  public void canGetPlayer(){
-    dealer.getPlayer(player);
+  public void canAddPlayer(){
+    dealer.addPlayer(player);
     assertEquals(1, dealer.countPlayers());
   }
 
+  /*@test 
+  public void canGetPlayers(){
+    dealer.addPlayer(player);
+    assertEquals(ArrayList<DealtToAble>, dealer.getPlayers());
+  }*/
+
   @Test
   public void canShowPlayer(){
-    dealer.getPlayer(player);
+    dealer.addPlayer(player);
     assertEquals(player, dealer.showPlayer(0));
   }
 
@@ -62,7 +70,7 @@ public class DealerTest {
   public void canDealCard(){
     deck.getCard(card); // make sure deck has one card
     dealer.setDeck(deck); // dealer sets deck
-    dealer.getPlayer(player); //put one player into players array
+    dealer.addPlayer(player); //put one player into players array
     dealer.dealCard(player);
     assertEquals(1, player.countHand());//player has one more card
     assertEquals(0, deck.packCount()); //deck has one less card
@@ -72,7 +80,7 @@ public class DealerTest {
   public void canDealStartHand(){
     deck.getCard(card); // make sure deck has one card
     dealer.setDeck(deck); // dealer sets deck
-    dealer.getPlayer(player);//put one player into players array
+    dealer.addPlayer(player);//put one player into players array
     dealer.dealStartHand(1);
     assertEquals(1, player.countHand());
   }

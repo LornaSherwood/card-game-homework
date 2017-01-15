@@ -11,7 +11,6 @@ public class Player implements DealtToAble{
   public Player(String name) {
     this.name = name;
     this.hand = new ArrayList<Populatable>();
-    
   }
 
   public String getName(){

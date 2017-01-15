@@ -3,14 +3,17 @@ import behaviours.*;
 import java.util.*;
 
 public class Game {
-  String name;
+  private String name;
   Rulable rules;
   CanDeal dealer;
+  ArrayList<Integer> scoreSheet;
+  
 
   public Game(){
     this.name = name;
     this.rules = rules;
     this.dealer = dealer;
+    scoreSheet = new ArrayList<Integer>();
   }
 
   public void setRules(Rulable rules){
@@ -34,9 +37,22 @@ public class Game {
     dealer.dealStartHand(handSize);
   }
 
-  /*public ArrayList getValueOfCards(){
-    array = valueofcards for each player in players
-  }*/
+  public ArrayList<Integer> getScoreSheet(){
+    ArrayList<DealtToAble> newPlayers = new ArrayList<>(dealer.getPlayers());
+    ArrayList<Integer> scoreSheet = new ArrayList<Integer>();
+    for (DealtToAble player : newPlayers){
+      scoreSheet.add(player.getValueOfHand());
+    }
+    return scoreSheet;
+  }
+
+ 
+  //public DealtToAble findHighestScorer(){
+
+
+  //}
+
+
 
 
 
